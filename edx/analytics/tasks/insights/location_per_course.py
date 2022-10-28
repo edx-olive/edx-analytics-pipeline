@@ -263,7 +263,7 @@ class LastCountryOfUser(LastCountryOfUserDownstreamMixin, GeolocationMixin, MapR
                     warehouse_path=self.warehouse_path,
                     mapreduce_engine=self.mapreduce_engine,
                     n_reduce_tasks=self.n_reduce_tasks,
-                    overwrite=True,
+                    overwrite=False,
                 )
             self.cached_local_requirements = requirements
 

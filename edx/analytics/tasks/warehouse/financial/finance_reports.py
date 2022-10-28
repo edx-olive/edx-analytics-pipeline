@@ -21,7 +21,7 @@ class BuildFinancialReportsTask(MapReduceJobTaskMixin, VerticaCopyTaskMixin, lui
 
     # Redefine the overwrite parameter to change its default to True.
     # This will cause the reports to reload when loading into internal reporting.
-    overwrite = luigi.BooleanParameter(default=True)
+    overwrite = luigi.BooleanParameter(default=False)
 
     def requires(self):
         yield (

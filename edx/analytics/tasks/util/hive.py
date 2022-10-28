@@ -435,7 +435,7 @@ class HiveQueryToMysqlTask(WarehouseMixin, MysqlInsertTask):
     """Populates a MySQL table with the results of a hive query."""
 
     overwrite = luigi.BooleanParameter(
-        default=True,
+        default=False,
         description='If True, overwrite the MySQL data.',
     )
     hive_overwrite = luigi.BooleanParameter(

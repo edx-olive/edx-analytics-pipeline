@@ -329,7 +329,7 @@ class ModuleEngagementIntervalTask(MapReduceJobTaskMixin, EventLogSelectionDowns
 
     def requires(self):
         for date in reversed([d for d in self.interval]):  # pylint: disable=not-an-iterable
-            should_overwrite = date >= self.overwrite_from_date
+            should_overwrite = False #date >= self.overwrite_from_date
             yield ModuleEngagementPartitionTask(
                 date=date,
                 n_reduce_tasks=self.n_reduce_tasks,
@@ -761,7 +761,7 @@ class ModuleEngagementSummaryMetricRangesMysqlTask(ModuleEngagementDownstreamMix
     """Result store storage for the metric ranges."""
 
     overwrite = luigi.BooleanParameter(
-        default=True,
+        default=False,
         description='Overwrite the table when writing to it by default. Allow users to override this behavior if they '
                     'want.',
         significant=False

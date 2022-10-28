@@ -137,7 +137,7 @@ class HistogramFromSqoopToMySQLWorkflowBase(
 
     import_credentials = luigi.Parameter()  # location of the edx-platform db creds
 
-    overwrite = True  # always overwrite the exported MySQL table.  Independent of sqoop_overwrite, which is for import
+    overwrite = False
 
     @property
     def insert_source_task(self):

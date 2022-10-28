@@ -845,7 +845,7 @@ class AnswerDistributionToMySQLTaskWorkflow(
 ):
 
     # Override the parameter that normally defaults to false. This ensures that the table will always be overwritten.
-    overwrite = luigi.BooleanParameter(default=True, significant=False)
+    overwrite = luigi.BooleanParameter(default=False, significant=False)
 
     @property
     def insert_source_task(self):

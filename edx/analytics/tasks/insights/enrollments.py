@@ -235,7 +235,7 @@ class CourseEnrollmentTask(CourseEnrollmentDownstreamMixin, MapReduceJobTask):
             pattern=self.pattern,
             n_reduce_tasks=self.n_reduce_tasks,
             warehouse_path=self.warehouse_path,
-            overwrite=True,
+            overwrite=False,
         )
 
     def requires_hadoop(self):
@@ -1174,7 +1174,7 @@ class CourseProgramMetadataInsertToMysqlTask(CourseSummaryEnrollmentDownstreamMi
     """Creates/populates the `course_program_metadata` Result Store table."""
 
     overwrite = luigi.BooleanParameter(
-        default=True,
+        default=False,
         description='Overwrite the table when writing to it by default. Allow users to override this behavior if they '
                     'want.',
         significant=False
