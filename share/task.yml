@@ -107,6 +107,7 @@
         repo={{ item.url }}
         dest={{ working_dir }}/{{ item.dir_name }}
         version=master
+        accept_hostkey=true 
       with_items: repos
 
     - name: branches fetched
