@@ -103,10 +103,10 @@
       when: ansible_distribution in common_redhat_variants
 
     - name: repositories checked out
-      git: >
-        repo={{ item.url }}
-        dest={{ working_dir }}/{{ item.dir_name }}
-        version=master
+      git: 
+        repo: {{ item.url }}
+        dest: {{ working_dir }}/{{ item.dir_name }}
+        version: master
         ssh_opts: -o StrictHostKeyChecking=no
       with_items: repos
 
