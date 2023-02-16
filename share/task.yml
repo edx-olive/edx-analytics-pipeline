@@ -107,7 +107,6 @@
         repo: "{{ item.url }}"
         dest: "{{ working_dir }}/{{ item.dir_name }}"
         version: master
-        GIT_SSH_OPTS: -o StrictHostKeyChecking=no
       with_items: repos
 
     - name: branches fetched
