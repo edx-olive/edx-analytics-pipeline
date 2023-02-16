@@ -104,7 +104,7 @@
 
     - name: repositories checked out
       git: 
-        repo: {{ item.url }}
+        repo: "{{ item.url }}"
         dest: "{{ working_dir }}/{{ item.dir_name }}"
         version: master
         ssh_opts: -o StrictHostKeyChecking=no
